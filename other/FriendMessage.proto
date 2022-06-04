@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message FriendMessage {
+    string FriendId = 1; // ID号
+    string FriendNo = 2; // 别名
+    string FriendNick = 3; // 好友的昵称
+    string Avatar = 9; //头像
+}

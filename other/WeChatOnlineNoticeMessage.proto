@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "TransportMessage.proto";
+
+message WeChatOnlineNoticeMessage {
+    string WeChatId = 1;
+    string WeChatNo = 2;
+    string WeChatNick = 3;
+    EnumGender Gender = 4;
+    string Country = 5;
+}

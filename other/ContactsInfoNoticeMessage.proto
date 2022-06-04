@@ -1,0 +1,7 @@
+syntax = "proto3";
+import "FriendMessage.proto";
+
+message ContactsInfoNoticeMessage {
+    string WeChatId = 1; // 全局唯一识别码
+    repeated FriendMessage Friends = 2; // 好友信息
+}

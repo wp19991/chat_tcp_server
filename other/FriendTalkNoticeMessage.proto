@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message FriendTalkNoticeMessage {
+    string WeChatId = 1; // 唯一识别码
+    string FriendId = 3; // 好友唯一识别码
+    bytes Content = 6; // 内容 二进制流
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+
+
+message TransportMessage {
+    int64 Id = 1; //消息Id(发送方内保持自增),请求中传入，响应中传回相同值
+    string AccessToken = 2; //设备通信token
+    EnumMsgType MsgType = 3; //承载的具体消息类型
+
+    google.protobuf.Any Content = 4; //具体的消息数据
+
+    int64 RefMessageId = 5; //如果是针对某个消息的响应，这里写对应请求的id
+}
+
+enum EnumMsgType {
+    UnknownMsg = 0; //未知消息
+    HeartBeatReq = 1001; //客户端发送的心跳包
+    MsgReceivedAck = 1002; //消息接收确认回复（接收或拒绝接收）
+    Error = 1003; //将错误单独提升为一种消息类型
+    WeChatOnlineNotice = 1020; //上线通知
+}
+
+enum EnumGender {
+    gender = 0; //性别
+}
